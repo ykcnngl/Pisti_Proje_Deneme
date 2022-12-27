@@ -5,11 +5,11 @@ import java.util.Scanner;
 		private String[] suit = {"Hearts","Spades","Diamonds","Clubs"} ;
 		private String[] number = {"A","2","3","4","5","6","7","8","9","10","J","Q","K"};
 		private String[] name;
-		
 		Scanner sc=new Scanner(System.in);
 		Card [] cards = new Card [52];
-		Player[] player;
-		Computer[] computer; 
+		Player plyr =new  Player("player");
+		Computer cmptr = new Computer("computer"); 
+		int dealCardindex = 0;
 		
 		Deck() {		// Constructor oluşturdum koddaki ilk çalışan yer buarsı
 			this.suit=suit;
@@ -52,12 +52,27 @@ import java.util.Scanner;
 		}
 		
 		
-		/*public static void DealCard(int player1, int player2) {
-		int player1 = 0;
-		int player2 = 0;
+		public static void DealCard(int player, int computer) {
+		int playerindex = 0;
+		int computerindex = 0;
 		for (int k = 0; k<8;k++) {
-			if ( k==0 && k%2==0){ 			// çift sırada olan kartlar bir oyuncuya tek sırada olan kartlar diğer oyuncuya gitsin diye böyle yaptım.
-			*/
+			if ( k==0 || k%2==0){ 			// çift sırada olan kartlar bir oyuncuya tek sırada olan kartlar diğer oyuncuya gitsin diye böyle yaptım.
+				player.player[playerindex] = cards[dealCardindex];
+				dealCardindex++;
+				player++;
+			}
+			if ( k%2==1) {              // tek sırada olan kartlar bilgisayara 
+				computer.computer[computerindex]= cards[dealCardindex];
+				dealCardindex++;
+				computer++;
+			}
+		}                   // DAĞITILAN KARTLARI ÇIKARMAM GEREK.
+		
+		
+		
+		
+		
+		
 	}
 	
 	

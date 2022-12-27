@@ -6,8 +6,9 @@ public class Pisti {
 		for (int k=0; k<52; k++){
 			System.out.println(d1.cards[i]);
 		}
-		d1.shuffle();
-		d1.Cut();
+		//d1.shuffle();
+		//d1.Cut();
+		d1.DealCard();
 	}
 }
 
